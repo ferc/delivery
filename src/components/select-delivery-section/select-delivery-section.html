@@ -1,0 +1,33 @@
+<div class="filter-box">
+  <h3 class="md-headline">Filtros</h3>
+
+  <div class="filter-inputs" layout="row">
+    <md-input-container>
+      <label>Nombre</label>
+      <input ng-model="search.name">
+    </md-input-container>
+
+    <md-input-container>
+      <label>Descripción</label>
+      <input ng-model="search.description">
+    </md-input-container>
+  </div>
+</div>
+
+<md-grid-list
+  md-cols-xs="1" md-cols-sm="2" md-cols-md="4" md-cols-gt-md="6"
+  md-row-height-gt-md="1:1" md-row-height="2:2"
+  md-gutter="8px" md-gutter-gt-sm="24px" >
+
+  <md-grid-tile ng-repeat="delivery in $ctrl.deliveries | filter:search:strict | orderBy:'name'" class="delivery md-whiteframe-2dp">
+    <md-grid-tile-header class="md-padding">
+      {{ delivery.name }}
+    </md-grid-tile-header>
+
+    <span class="md-padding">{{ delivery.description }}</span>
+
+    <md-grid-tile-footer>
+      <md-button class="md-raised md-primary" ng-href="{{ '/delivery/' + delivery.id + '/realizar-pedido' }}">Realizar Pedido</md-button>
+    </md-grid-tile-footer>
+  </md-grid-tile>
+</md-grid-list>

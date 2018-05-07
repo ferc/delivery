@@ -1,0 +1,31 @@
+<md-content layout="column" layout-padding class="client-data-inputs">
+  <md-input-container>
+    <label>Nombre</label>
+    <md-icon class="md-accent">person</md-icon>
+    <input ng-model="$ctrl.client.firstName" required>
+  </md-input-container>
+
+  <md-input-container>
+    <label>Apellido</label>
+    <md-icon class="md-accent">person</md-icon>
+    <input ng-model="$ctrl.client.lastName" required>
+  </md-input-container>
+
+  <md-input-container>
+    <label>Dirección</label>
+    <md-icon class="md-accent">home</md-icon>
+    <input ng-model="$ctrl.client.address" required>
+  </md-input-container>
+
+  <md-input-container>
+    <label>Teléfono</label>
+    <md-icon class="md-accent">phone</md-icon>
+    <input ng-model="$ctrl.client.phone" required>
+  </md-input-container>
+
+  <md-input-container>
+    <label>Correo electrónico</label>
+    <md-icon class="md-accent">email</md-icon>
+    <input ng-model="$ctrl.client.email" type="email" required>
+  </md-input-container>
+</md-content>

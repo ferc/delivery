@@ -1,0 +1,43 @@
+<html lang="es">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <base href="/">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="/main.css">
+  </head>
+  <body ng-app="DespegarApp" ng-controller="AppController" ng-cloak>
+    <md-toolbar class="app-header" layout="row" layout-align="space-between center">
+      <a href="/" class="md-display-1 app-title">Delivery Online</a>
+
+      <md-nav-bar
+        md-selected-nav-item="section"
+        nav-bar-aria-label="Navigation links">
+
+        <md-nav-item md-nav-href="/" name="select-delivery">
+          1. Elegí tu delívery
+        </md-nav-item>
+
+        <md-nav-item
+          md-nav-href="{{ order.deliveryId ? '/delivery/' + order.deliveryId + '/realizar-pedido' : '' }}"
+          name="make-order"
+          ng-disabled="shouldDisableNavigation(!order.deliveryId)">
+          2. Realizá tu pedido
+        </md-nav-item>
+
+        <md-nav-item
+          md-nav-href="{{ order.deliveryId ? '/delivery/' + order.deliveryId + '/completar-datos' : '' }}"
+          name="client-data"
+          ng-disabled="shouldDisableNavigation(!order.deliveryId)">
+          3. Completa tus datos
+        </md-nav-item>
+      </md-nav-bar>
+    </md-toolbar>
+
+    <md-content class="main-view" ng-view></md-content>
+
+    <script src="/bundle.js"></script>
+  </body>
+</html>

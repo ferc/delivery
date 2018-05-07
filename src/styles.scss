@@ -1,0 +1,22 @@
+@import '~angular-material/angular-material';
+
+.app-header {
+  padding: 0 16px;
+
+  .md-nav-bar {
+    height: 64px;
+
+    ._md-nav-button {
+      line-height: 40px;
+    }
+  }
+}
+
+.app-title {
+  color: #FFF;
+  text-decoration: none;
+}
+
+.main-view {
+  padding: 16px;
+}

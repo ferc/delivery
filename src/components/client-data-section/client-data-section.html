@@ -1,0 +1,28 @@
+<div>
+  <div layout="row" layout-align="space-around">
+    <h3 class="md-headline">Completá tus datos!</h3>
+
+    <span></span>
+  </div>
+
+  <div layout="row" layout-align="space-around">
+    <client-data client="$ctrl.order.client"></client-data>
+
+    <div>
+      <products-list order="$ctrl.order"></products-list>
+
+      <div layout="row" layout-align="end center">
+        <md-button class="md-raised" ng-href="{{ '/delivery/' + $ctrl.id + '/realizar-pedido' }}">
+          Atrás
+        </md-button>
+
+        <md-button
+          class="md-raised md-primary"
+          ng-disabled="!$ctrl.areThereProducts() || !$ctrl.isValidClient()"
+          ng-click="$ctrl.openModalData()">
+          Realizar Pedido
+        </md-button>
+      </div>
+    </div>
+  </div>
+</div>

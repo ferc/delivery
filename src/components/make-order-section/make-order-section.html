@@ -1,0 +1,32 @@
+<div>
+  <div layout="row" layout-align="space-around">
+    <h3 class="md-headline">Realizá tu pedido!</h3>
+
+    <span></span>
+  </div>
+
+  <div layout="row" layout-align="space-around">
+    <products-selector
+      delivery-categories="$ctrl.delivery.categories"
+      on-add-product="$ctrl.addProduct(product)"
+      order-products="$ctrl.order.products"
+    ></products-selector>
+
+    <div>
+      <products-list order="$ctrl.order"></products-list>
+
+      <div layout="row" layout-align="end center">
+        <md-button class="md-raised" ng-href="/">
+          Atrás
+        </md-button>
+
+        <md-button
+          class="md-raised md-primary"
+          ng-disabled="!$ctrl.areThereProducts()"
+          ng-href="{{ '/delivery/' + $ctrl.id + '/completar-datos' }}">
+          Continuar
+        </md-button>
+      </div>
+    </div>
+  </div>
+</div>

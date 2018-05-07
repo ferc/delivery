@@ -1,0 +1,44 @@
+<div layout="row" ng-if="$ctrl.currentCategoryId && $ctrl.categories">
+  <md-input-container class="category-select">
+    <label>Categoría</label>
+
+    <md-select ng-model="$ctrl.currentCategoryId">
+      <md-option ng-repeat="category in $ctrl.categories | exists:$ctrl.deliveryCategories:'id':'id'" ng-value="category.id">
+        {{ category.name }}
+      </md-option>
+    </md-select>
+  </md-input-container>
+
+  <md-table-container class="product-selector-table">
+    <table md-table>
+      <thead md-head>
+        <tr md-row>
+          <th md-column><span>Producto</span></th>
+          <th md-column md-numeric><span>Precio</span></th>
+          <th md-column></th>
+          <th md-column></th>
+        </tr>
+      </thead>
+      <tbody md-body>
+        <tr md-row ng-repeat="product in $ctrl.products | exists:$ctrl.getCurrentProducts():'id'">
+          <td md-cell>{{ product.name }}</td>
+          <td md-cell>{{ product.price }}</td>
+          <td md-cell>
+            <md-button class="md-icon-button md-accent">
+              <md-tooltip md-direction="top">{{ product.name }}</md-tooltip>
+              <md-icon aria-label="search">search</md-icon>
+            </md-button>
+          </td>
+          <td md-cell>
+            <md-button
+              class="md-icon-button md-accent"
+              ng-click="$ctrl.addProduct(product)"
+              ng-disabled="$ctrl.isAlreadyInOrder(product)">
+              <md-icon>add_shopping_cart</md-icon>
+            </md-button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </md-table-container>
+<div>

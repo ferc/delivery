@@ -1,0 +1,32 @@
+.filter-box {
+  background-color: #E0E0E0;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  padding: 16px;
+}
+
+.filter-inputs {
+  md-input-container {
+    margin-right: 16px;
+  }
+}
+
+md-grid-tile.delivery {
+  md-grid-tile-header {
+    background-color: #004D40;
+  }
+
+  md-grid-tile-footer {
+    width: 100%;
+
+    figcaption {
+      width: 100%;
+    }
+
+    .md-button {
+      margin: 0;
+      padding:  8px;
+      width: 100%;
+    }
+  }
+}

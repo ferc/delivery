@@ -1,0 +1,40 @@
+{
+  "name": "despegar",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "generate-mocks": "node ./mock-generator",
+    "start": "./node_modules/.bin/webpack-dev-server --open --color --history-api-fallback --mode development"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.6.9",
+    "angular-animate": "^1.6.9",
+    "angular-aria": "^1.6.9",
+    "angular-material": "^1.1.8",
+    "angular-material-data-table": "^0.10.10",
+    "angular-messages": "^1.6.9",
+    "angular-route": "^1.6.9",
+    "css-loader": "^0.28.10"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0-beta.42",
+    "@babel/preset-env": "^7.0.0-beta.42",
+    "babel-loader": "^8.0.0-beta.2",
+    "copy-webpack-plugin": "^4.5.1",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "fs-extra": "^5.0.0",
+    "html-loader": "^0.5.5",
+    "mini-css-extract-plugin": "^0.2.0",
+    "ngtemplate-loader": "^2.0.1",
+    "node-sass": "^4.7.2",
+    "sass-loader": "^6.0.7",
+    "style-loader": "^0.20.3",
+    "webpack": "^4.1.1",
+    "webpack-cli": "^2.0.12",
+    "webpack-dev-server": "^3.1.1"
+  }
+}
